@@ -5,7 +5,8 @@
   connection: local
 
   vars:
-   - datavars.yml
+    user: cn02945
+    passwd: ebn10388**
 
   tasks:
     - name: "Configuring Junos OS to Display a System Login Message"
