@@ -13,12 +13,16 @@
       juniper.device.config:
         load: "merge"
         lines:
-          - configure
-          - set system login message "\n\n\n\tUNAUTHORIZED USE OF THIS SYSTEM\n         
+          - |
+            system {
+              login {
+                 message "\n\n\n\tUNAUTHORIZED USE OF THIS SYSTEM\n         
                  \tIS STRICTLY PROHIBITED!\n\n\tPlease contact 
                  \'company-noc@company.com\' to gain\naccess 
-                 to this equipment if you need authorization.\n\n\n"
-          - commit
+                 to this equipment if you need authorization.\n\n\n";
+                }
+              }
+            }
           
       register: response
     - name: Print the response
