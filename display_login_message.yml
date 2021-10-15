@@ -21,7 +21,7 @@
           - commit
           
       register: response
-    - name: "Print the response"
+    - name: Print the response
       debug:
         var: reponse
 ... 
