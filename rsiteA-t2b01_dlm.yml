@@ -4,10 +4,6 @@
   hosts: rsiteA-t2b01-vmx-junos
   connection: local
   gather_facts: no
-  
-  vars:
-    mode: "telnet"
-    port: "32777"
 
   tasks:
     - name: "Configure Display LOGIN Message"
