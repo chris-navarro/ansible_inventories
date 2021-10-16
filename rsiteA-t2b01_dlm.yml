@@ -11,6 +11,7 @@
       private: yes
 
   vars:
+    user: cn02945
     passwd: "{{ DEVICE_PASSWORD }}"
     mode: "telnet"
     port: "32777"
@@ -36,4 +37,3 @@
       debug:
         var: junos.version
 ...
-... 
