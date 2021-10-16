@@ -6,8 +6,6 @@
   gather_facts: no
   
   vars:
-    user: cn02945
-    passwd: "ebn10388**"
     mode: "telnet"
     port: "32777"
 
