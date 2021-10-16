@@ -22,7 +22,7 @@
         config_mode: "private"
         load: "set"
         lines:
-          - "set system login message "THIS IS A PRIVATE NETWORK, UNAUTHORIZED USERS KEEP OUT!!!\n\n YOU WILL BE PERSUCUTED TO FULL EXTENT OF THE LAW!!!"
+          - "set system login message "THIS IS A PRIVATE NETWORK, UNAUTHORIZED USERS KEEP OUT!!! YOU WILL BE PERSUCUTED TO FULL EXTENT OF THE LAW!!!"
       register: response
     - name: "Print the config changes"
       debug:
