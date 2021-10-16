@@ -1,7 +1,7 @@
 ---
 
 - name: Get Device Facts
-  hosts: junos
+  hosts: rsiteA-t2b01-vmx-junos
   connection: local
   gather_facts: no
 
