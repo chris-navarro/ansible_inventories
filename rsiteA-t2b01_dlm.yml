@@ -2,7 +2,7 @@
 
 - name: Get Device Facts
   hosts: rsiteA-t2b01-vmx-junos
-  connection: local
+  connection: juniper.device.pyez
   gather_facts: yes
   
   tasks:
