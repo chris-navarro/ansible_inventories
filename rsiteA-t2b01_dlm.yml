@@ -4,7 +4,11 @@
   hosts: rsiteA-t2b01-vmx-junos
   connection: local
   gather_facts: no
-
+  
+  vars:
+    user: cn02945
+    passwd: ebn10388**
+  
   tasks:
     - name: "Configure Display LOGIN Message"
       juniper.device.config:
