@@ -1,0 +1,39 @@
+---
+
+- name: Get Device Facts
+  hosts: junos
+  connection: local
+  gather_facts: no
+
+  vars_prompt:
+    - name: "DEVICE_PASSWORD"
+      prompt: "ebn10388**"
+      private: yes
+
+  vars:
+    passwd: "{{ DEVICE_PASSWORD }}"
+    mode: "telnet"
+    port: "32777"
+
+  tasks:
+    - name: "Configure Display LOGIN Message"
+      juniper.device.config:
+        config_mode: "private"
+        load: "set"
+        lines:
+          - "set system login message "THIS IS A PRIVATE NETWORK, UNAUTHORIZED USERS KEEP OUT!!!\n\n YOU WILL BE PERSUCUTED TO FULL EXTENT OF THE LAW!!!""
+      register: response
+    - name: "Print the config changes"
+      debug:
+        var: response.diff_lines
+
+  tasks:
+    - name: Retrieve facts from devices running Junos OS
+      juniper.device.facts:  
+        savedir: "tftp://192.168.0.9/tftpboot"
+
+    - name: Print version
+      debug:
+        var: junos.version
+...
+... 
