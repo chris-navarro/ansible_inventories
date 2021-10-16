@@ -4,8 +4,15 @@
   hosts: rsiteA-t2b01-vmx-junos
   connection: local
   gather_facts: no
+  
+  
+  vars_prompt:
+    - name: "DEVICE_PASSWORD"
+      prompt: "Device password"
+      private: yes
 
   vars:
+    passwd: "{{ ebn10388** }}"
     mode: "telnet"
     port: "32777"
 
