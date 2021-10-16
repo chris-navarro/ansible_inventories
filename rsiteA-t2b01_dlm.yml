@@ -5,12 +5,6 @@
   connection: local
   gather_facts: no
   
-  
-  vars_prompt:
-    - name: "Credentials"
-      prompt: "Login"
-      private: yes
-
   vars:
     user: cn02945
     passwd: "ebn10388**"
