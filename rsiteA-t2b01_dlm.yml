@@ -7,12 +7,13 @@
   
   
   vars_prompt:
-    - name: "DEVICE_PASSWORD"
-      prompt: "Device password"
+    - name: "Credentials"
+      prompt: "Login"
       private: yes
 
   vars:
-    passwd: "{{ ebn10388** }}"
+    user: cn02945
+    passwd: "ebn10388**"
     mode: "telnet"
     port: "32777"
 
