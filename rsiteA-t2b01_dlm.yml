@@ -3,7 +3,7 @@
 - name: Get Device Facts
   hosts: rsiteA-t2b01-vmx-junos
   connection: local
-  gather_facts: no
+  gather_facts: yes
   
   tasks:
     - name: "Configure Display LOGIN Message"
