@@ -1,28 +1,30 @@
----
-
-- name: Get Device Facts
-  hosts: rsiteA-t2b01-vmx-junos
-  roles:
-   - Juniper.junos
+--- 
+- 
   connection: local
-  gather_facts: no
-  
-  vars_prompt:
-  - name: USERNAME
-    prompt: User name
-    private: no
-  - name: DEVICE_PASSWORD
-    private: yes
-  
-  tasks:
-    - name: Reboot all REs on the device
-       juniper_junos_system:
-        action: "reboot"
-        user: {{"USERNAME"}}
-        passwd: {{"DEVICE_PASSWORD"}}
-       register: response
-
-    - name: Print version
-      debug:
-        var: junos.version
-...
+  gather_facts: false
+  hosts: rsiteA-t2b01-vmx-junos
+  name: "Get Device Facts"
+  roles: 
+    - Juniper.junos
+  tasks: 
+    - 
+      juniper_junos_system: 
+        action: reboot
+        passwd: 
+          ? 
+            DEVICE_PASSWORD: ~
+          : ~
+        user: 
+          ? 
+            USERNAME: ~
+          : ~
+      name: "Reboot all REs on the device"
+      register: response
+  vars_prompt: 
+    - 
+      name: USERNAME
+      private: false
+      prompt: "User name"
+    - 
+      name: DEVICE_PASSWORD
+      private: true
