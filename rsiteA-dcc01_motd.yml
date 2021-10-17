@@ -8,7 +8,7 @@
     username: cn02945
     password: ebn10388**
     authorize: yes
-    auth_pass: ebn10388**
+    auth_pass: "{{ password }}"
     
   tasks:
   - name: configure the login banner
