@@ -6,7 +6,7 @@
 
   tasks:
     - name: Configure the login banner
-      eos_banner:
+      arista.eos.eos_banner:
         banner: login
         text: |
            * ********************************************************** *
