@@ -4,24 +4,11 @@
   connection: local
   gather_facts: yes
   
-  vars:
-    username: cn02945
-    password: ebn10388**
-  
-  provider:
-    authorize: yes
-    auth_pass: "ebn10388**
-    
-     tasks:
-     - name: Configure the login banner
-       eos_banner:
-         banner: login
-         text: |
-           * ********************************************************** *
-           * This is a PRIVATE NETWORK! UNAUTHORIZED USERS KEEP OUT!!!  *
-           * THIS SWITCH IS MANAGED VIA ANSIBLE NETWORK AUTOMATION!!!!  *
-           * You will be PUNISH on the FULL Extent of the LAW!!!        * 
-           *                                                            *
-           *  All Access to this device is loged.                       *
-           * ********************************************************** *
-         state: present
+- name: configure the login banner
+  eos_banner:
+    banner: login
+    text: |
+      this is my login banner
+      that contains a multiline
+      string
+    state: present     
