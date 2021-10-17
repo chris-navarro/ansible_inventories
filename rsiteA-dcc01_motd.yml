@@ -21,8 +21,8 @@
            *  All Access to this device is loged.                       *
            * ********************************************************** *      
         state: present
-        become: yes
-        become_method: enable
+      become: yes
+      become_method: enable
       
       register: eos_command_output
     - debug: var=eos_command_output  
