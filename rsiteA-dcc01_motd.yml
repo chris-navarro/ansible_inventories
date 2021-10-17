@@ -1,25 +1,24 @@
- ---
-    - name: EOS Show Commands
-      hosts: "eos_devices"
-      gather_facts: false
-      connection: local
-
-      vars:
-        cli:
-          host: rsiteA-dcc01-vEOS
-          authorize: true
-          transport: cli
-
-      tasks:
-      
-        - name: eos show commands
-          eos_command:
-            commands:
-              - show version | i Arista
-            provider: "{{ cli }}"
-          register: output
-
-        - name: show output
-          debug:
-            var: output
+--- 
+- 
+  connection: local
+  gather_facts: false
+  hosts: eos_devices
+  name: "EOS Show Commands"
+  tasks: 
+    - 
+      eos_command: 
+        commands: 
+          - "show version | i Arista"
+      name: "eos show commands"
+      provider: "{{ cli }}"
+      register: output
+    - 
+      debug: ~
+      name: "show output"
+      var: output
+  vars: 
+    cli: 
+      authorize: true
+      host: rsiteA-dcc01-vEOS
+      transport: cli
 ...
