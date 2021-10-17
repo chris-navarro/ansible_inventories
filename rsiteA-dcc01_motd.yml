@@ -1,15 +1,25 @@
-- name: configure the login banner
-  hosts: dc1
-  connection: local
-  gather_facts: no
-  
-  eos_banner:
-    banner: login
-    text: |
-      THIS IS A PRIVATE NETWORK, UNAUTHORIZED USERS KEEP OUT!!!\n\n YOU WILL BE PERSUCUTED TO FULL EXTENT OF THE LAW!!!
-    state: present
+ ---
+    - name: EOS Show Commands
+      hosts: "eos_devices"
+      gather_facts: false
+      connection: local
 
-- name: remove the motd banner
-  eos_banner:
-    banner: motd
-    state: absent
+      vars:
+        cli:
+          host: rsiteA-dcc01-vEOS
+          authorize: true
+          transport: cli
+
+      tasks:
+      
+        - name: eos show commands
+          eos_command:
+            commands:
+              - show version | i Arista
+            provider: "{{ cli }}"
+          register: output
+
+        - name: show output
+          debug:
+            var: output
+...
