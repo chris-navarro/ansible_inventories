@@ -1,6 +1,8 @@
 ---
 - name: Run commands on remote LAB devices
   hosts: rsiteA-dcc01-vEOS
+  become: yes
+  become_method: enable
   connection: local
   gather_facts: yes
  
