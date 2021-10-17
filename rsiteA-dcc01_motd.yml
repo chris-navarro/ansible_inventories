@@ -21,8 +21,10 @@
            *  All Access to this device is loged.                       *
            * ********************************************************** *      
         state: present
-      become: yes
-      become_method: enable
+      
+      provider:
+        authorize: yes
+        auth_pass: "ebn10388**"
       
       register: eos_command_output
     - debug: var=eos_command_output  
