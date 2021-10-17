@@ -8,7 +8,6 @@
   tasks:
     - name: "Configure Display LOGIN Message"
       juniper.device.config:
-        config_mode: "private"
         load: "set"
         lines:
           - set system login message "THIS IS A PRIVATE NETWORK, UNAUTHORIZED USERS KEEP OUT!!! YOU WILL BE PERSUCUTED TO FULL EXTENT OF THE LAW!!!"
