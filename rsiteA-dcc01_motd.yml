@@ -5,8 +5,9 @@
   gather_facts: yes
 
   tasks:
-  - name:
+  - name: Gather info from Show Version
     eos_command:
+     commands: 'show version'
      username: cn02945
      password: ebn10388**
      transport: eapi
