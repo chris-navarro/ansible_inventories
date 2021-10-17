@@ -7,9 +7,17 @@
   vars:
     username: cn02945
     password: ebn10388**
-
+  
+  tasks:
+  - name: Gather facts (eos)
+    eos_facts:
+      gather_subset:
+        - "!hardware"
     
-  tasks: 
+    provider:
+    authorize: yes
+    auth_pass: ebn10388**
+    
   - name: configure the login banner
     eos_banner:
      banner: login
@@ -18,7 +26,3 @@
        that contains a multiline
        string
      state: present
-   
-    provider:
-    authorize: yes
-    auth_pass: ebn10388**
