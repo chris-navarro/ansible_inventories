@@ -8,8 +8,8 @@
   - name: Gather info from Show Version
     eos_command:
      commands: 'show version'
-     username: cn02945
-     password: ebn10388**
+     username: ansible
+     password: password
      transport: eapi
      use_ssl: true
  
