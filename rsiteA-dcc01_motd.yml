@@ -21,4 +21,7 @@
            *  All Access to this device is loged.                       *
            * ********************************************************** *      
         state: present
+      
+      register: eos_command_output
+    - debug: var=eos_command_output  
   
