@@ -3,8 +3,6 @@
   hosts: rsiteA-dcc01-vEOS
   connection: local
   gather_facts: yes
-  become: yes
-  become_method: enable
   
   vars:
     username: cn02945
@@ -12,6 +10,8 @@
 
   tasks:
     - name: Configure the login banner
+      become: yes
+      become_method: enable
       eos_banner:
         banner: login
         text: |
