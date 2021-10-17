@@ -4,11 +4,6 @@
   connection: local
   gather_facts: yes
  
-  vars:
-    username: cn02945
-    password: ebn10388**
-    authorize: yes
-    auth_pass: "{{ password }}"
     
   tasks:
   - name: configure the login banner
