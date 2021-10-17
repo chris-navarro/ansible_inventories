@@ -1,14 +1,16 @@
 ---
 - name: Run commands on remote LAB devices
   hosts: rsiteA-dcc01-vEOS
-  become: yes
-  become_method: enable
   connection: local
   gather_facts: yes
  
   vars:
     username: cn02945
     password: ebn10388**
+    
+  provider:
+    authorize: yes
+    auth_pass: ebn10388**
     
   tasks: 
   - name: configure the login banner
