@@ -1,0 +1,15 @@
+- name: configure the login banner
+  hosts: dc1
+  connection: local
+  gather_facts: no
+  
+  eos_banner:
+    banner: login
+    text: |
+      THIS IS A PRIVATE NETWORK, UNAUTHORIZED USERS KEEP OUT!!!\n\n YOU WILL BE PERSUCUTED TO FULL EXTENT OF THE LAW!!!
+    state: present
+
+- name: remove the motd banner
+  eos_banner:
+    banner: motd
+    state: absent
