@@ -4,14 +4,7 @@
   connection: local
   gather_facts: yes
 
-  tasks:
-  - name: Gather info from Show Version
-    eos_command:
-     commands: 'show version'
-     username: ansible
-     transport: eapi
-     use_ssl: true
- 
+
   - name: configure the login banner
     eos_banner:
      banner: login
