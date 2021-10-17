@@ -7,10 +7,7 @@
   vars:
     username: cn02945
     password: ebn10388**
-    
-  provider:
-    authorize: yes
-    auth_pass: ebn10388**
+
     
   tasks: 
   - name: configure the login banner
@@ -20,4 +17,8 @@
        this is my login banner
        that contains a multiline
        string
-     state: present    
+     state: present
+   
+    provider:
+    authorize: yes
+    auth_pass: ebn10388**
