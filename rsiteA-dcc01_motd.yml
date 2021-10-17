@@ -1,16 +1,16 @@
 ---
 - name: Run commands on remote LAB devices
-  hosts: all
+  hosts: rsiteA-dcc01-vEOS
   connection: local
-  gather_facts: no
-  pre_tasks:
-    - include_vars: "authentication.yaml"
+  gather_facts: yes
 
   tasks:
-    - name: Configure device hostname from lines
-      eos_config:
-        provider: "{{arista_credentials}}"
-        lines: 
-          - "hostname MyHostname"
-          - "ntp server 1.1.1.1"
+    - name: Configure the login banner
+      eos_banner:
+      banner: login
+      text: |
+         This is a PRIVATE NETWORK! UNAUTHORIZED USERS KEEP OUT!!!
+         You will be PUNISH on the FULL Extent of the LAW!!!
+      
+      state: present
   
