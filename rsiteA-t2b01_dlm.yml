@@ -13,14 +13,6 @@
         lines:
           - set system login message "THIS IS A PRIVATE NETWORK, UNAUTHORIZED USERS KEEP OUT!!! YOU WILL BE PERSUCUTED TO FULL EXTENT OF THE LAW!!!"
       register: response
-    
-    - name: "Print the config changes"
-      debug:
-        var: response.diff_lines
-
-    - name: Retrieve facts from devices running Junos OS
-      juniper.device.facts:  
-        savedir: "tftp://192.168.0.9/tftpboot"
 
     - name: Print version
       debug:
