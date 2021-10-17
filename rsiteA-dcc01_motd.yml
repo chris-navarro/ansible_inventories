@@ -3,13 +3,15 @@
   hosts: rsiteA-dcc01-vEOS
   connection: local
   gather_facts: yes
-  username: cn02945
-  password: ebn10388**
-  transport: eapi
-  use_ssl: true
- 
-    
+
   tasks:
+  - name:
+    eos_command:
+     username: cn02945
+     password: ebn10388**
+     transport: eapi
+     use_ssl: true
+ 
   - name: configure the login banner
     eos_banner:
      banner: login
