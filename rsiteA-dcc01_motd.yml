@@ -2,7 +2,7 @@
 - name: Run commands on remote LAB devices
   hosts: rsiteA-dcc01-vEOS
   connection: local
-  gather_facts: yes
+  gather_facts: no
   
   vars:
     username: cn02945
