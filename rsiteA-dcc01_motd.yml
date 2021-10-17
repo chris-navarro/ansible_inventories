@@ -7,17 +7,10 @@
   vars:
     username: cn02945
     password: ebn10388**
-  
-  tasks:
-  - name: Gather facts (eos)
-    eos_facts:
-      gather_subset:
-        - "!hardware"
-    
-    provider:
     authorize: yes
     auth_pass: ebn10388**
     
+  tasks:
   - name: configure the login banner
     eos_banner:
      banner: login
