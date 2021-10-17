@@ -3,6 +3,8 @@
   hosts: rsiteA-dcc01-vEOS
   connection: local
   gather_facts: yes
+  username: cn02945
+  password: ebn10388**
 
   tasks:
     - name: Configure the login banner
