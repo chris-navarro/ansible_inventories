@@ -8,7 +8,7 @@
   tasks:
     - name: "Configure Display LOGIN Message"
        junipernetworks.junos.junos_command:
-            commands: show version
+         commands: show version
        register: response
 
     - name: Print version
