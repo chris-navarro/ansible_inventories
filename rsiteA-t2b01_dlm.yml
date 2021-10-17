@@ -2,13 +2,24 @@
 
 - name: Get Device Facts
   hosts: rsiteA-t2b01-vmx-junos
+  roles:
+   - Juniper.junos
   connection: local
-  gather_facts: yes
+  gather_facts: no
+  
+  vars_prompt:
+  - name: USERNAME
+    prompt: User name
+    private: no
+  - name: DEVICE_PASSWORD
+    private: yes
   
   tasks:
-    - name: "Configure Display LOGIN Message"
-       junipernetworks.junos.junos_command:
-         commands: show version
+    - name: Reboot all REs on the device
+       juniper_junos_system:
+        action: "reboot"
+        user: {{"USERNAME"}}
+        passwd: {{"DEVICE_PASSWORD"}}
        register: response
 
     - name: Print version
