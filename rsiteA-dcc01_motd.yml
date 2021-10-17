@@ -26,6 +26,3 @@
            * ********************************************************** *      
         state: present
       
-      register: eos_command_output
-    - debug: var=eos_command_output  
-  
