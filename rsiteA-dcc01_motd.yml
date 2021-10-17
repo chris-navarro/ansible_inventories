@@ -7,10 +7,10 @@
   tasks:
     - name: Configure the login banner
       eos_banner:
-      banner: login
-      text: |
-         This is a PRIVATE NETWORK! UNAUTHORIZED USERS KEEP OUT!!!
-         You will be PUNISH on the FULL Extent of the LAW!!!
+        banner: login
+        text: |
+           This is a PRIVATE NETWORK! UNAUTHORIZED USERS KEEP OUT!!!
+           You will be PUNISH on the FULL Extent of the LAW!!!
       
-      state: present
+        state: present
   
