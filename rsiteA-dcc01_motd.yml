@@ -2,6 +2,7 @@
 - name: Run commands on remote LAB devices
   hosts: rsiteA-dcc01-vEOS
   connection: network_cli
+  ansible_network_os: eos
   become: yes
   gather_facts: no
 
