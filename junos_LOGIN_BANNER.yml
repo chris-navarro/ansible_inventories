@@ -12,7 +12,7 @@
 
   tasks:
   - name: Configure Display Login Banner
-    junipernetworks.junos.junos_banner: 
+    junos_banner: 
        banner: login
        text: |
         *******************************************************************
