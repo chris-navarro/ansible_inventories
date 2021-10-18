@@ -4,6 +4,9 @@
   connection: network_cli
   become: yes
   gather_facts: no
+  
+  vars:
+  - eos.yml
 
   tasks:
   - name: configure the login banner
