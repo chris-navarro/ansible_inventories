@@ -2,11 +2,14 @@
 - name: Run commands on remote LAB devices
   hosts: rsiteA-dcc01-vEOS
   connection: network_cli
-  become: yes
   gather_facts: no
   
   vars:
-    group_vars: eos.yml
+    ansible_os: eos
+    ansible_become: yes
+    ansible_become_method: enable
+    ansible_user: ansible
+    ansible_password: ebn10388**
 
   tasks:
   - name: configure the login banner
