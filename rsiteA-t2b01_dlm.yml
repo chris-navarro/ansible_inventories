@@ -1,21 +1,26 @@
 --- 
 - name: Get Device Facts
-  hosts: rsiteA-t2b01-vmx-junos
-  roles: 
-    - Juniper.junos
-  connection: local
+  hosts: junos
   gather_facts: no
  
-  vars_prompt: 
-    - name: USERNAME
-      private: no
-      prompt: "User name"
-    - name: DEVICE_PASSWORD
-      private: true
+
+  vars:
+    ansible_connection: network_cli
+    ansible_network_os: junos
+    ansible_become: yes
+    ansible_become_method: enable
+    ansible_user: cn02945
+    ansible_password: ebn10388**
 
   tasks:
-  - name: Reboot All REs on the Device
-    juniper_junos_system: 
-       action: reboot
-       user: "{{USERNAME}}"
-       passwd: "{{DEVICE_PASSWORD}}"
+  - name: Configure Display Login Banner
+    junos_banner: 
+       banner: login
+       text: |
+        *******************************************************************
+        * This is CHRIS's PRIVATE NETWORK, UNAUTHORIZED USERS KEEP OUT!!! *
+        * THIS NETWORK IS BEING MANAGED BY ANSIBLE AUTOMATION NETWORK.    *
+        *                                                                 *
+        *  Authorized users are being loged...                            *
+        *******************************************************************
+      state: present
