@@ -1,6 +1,8 @@
 --- 
 - name: Get Device Facts
   hosts: rsiteA-t2b01-vmx-junos
+  roles:
+   - Juniper.junos
   gather_facts: no
  
 
