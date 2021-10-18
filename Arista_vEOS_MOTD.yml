@@ -24,4 +24,3 @@
        *******************************************************************
      state: present
     register: response
-  - debug: response 
