@@ -10,8 +10,8 @@
     ansible_become: yes
     ansible_become_method: sudo
     ansible_port: 22
-    ansible_user: cn02945
-    ansible_password: ebn10388**
+    ansible_user: root
+    ansible_password: admin123
 
   tasks:
   - name: Configure Display Login Banner
