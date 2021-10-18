@@ -6,7 +6,7 @@
   gather_facts: no
   
   vars:
-  - eos.yml
+    group_vars: eos.yml
 
   tasks:
   - name: configure the login banner
