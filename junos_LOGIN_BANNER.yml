@@ -9,7 +9,7 @@
     ansible_network_os: junos
     ansible_become: yes
     ansible_become_method: enable
-    ansible_command_timeout: 100
+    ansible_command_timeout: 600
     ansible_port: 22
     ansible_user: cn02945
     ansible_password: ebn10388**
