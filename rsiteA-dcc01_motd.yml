@@ -2,13 +2,13 @@
 - name: Run commands on remote LAB devices
   hosts: rsiteA-dcc01-vEOS
   connection: network_cli
-  gather_facts: no
+  gather_facts: yes
   
   vars:
     ansible_network_os: eos
     ansible_become: yes
     ansible_become_method: enable
-    ansible_user: ansible
+    ansible_user: cn02945
     ansible_password: ebn10388**
 
   tasks:
